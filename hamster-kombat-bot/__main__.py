@@ -6,6 +6,9 @@ import cv2
 import numpy as np
 
 
+__VERSION__ = '0.0.1'
+
+
 def change() -> None:
     global work
     work = not work
