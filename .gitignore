@@ -8,3 +8,6 @@ venv/
 
 # idea
 .idea/
+
+# pyenv
+.python-version
