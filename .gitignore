@@ -5,6 +5,8 @@ __pycache__/
 
 # Environments
 venv/
+venv_win/
+venv_linux/
 
 # idea
 .idea/
