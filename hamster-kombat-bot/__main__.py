@@ -101,8 +101,8 @@ def click(template_path: str, tap_count: int, threshold: float =0.8) -> None:
 
 if __name__ == "__main__":
 
-    ENERGY = 5500
-    ONE_TAP_ENERGY = 11
+    ENERGY = 7500
+    ONE_TAP_ENERGY = 14
     
     # Ждем, пока пользователь нажмет клавишу запуска бота
     keybind_start = "`"
@@ -126,10 +126,13 @@ if __name__ == "__main__":
         for _ in zip(*loc[::-1]):
             offset_tap_count = random.randint(-100, 0)
             tap_count = ENERGY // ONE_TAP_ENERGY + offset_tap_count
-            print(f"Tap count: {tap_count}")
+            print(f"Количество тапов: {tap_count}", end="\r")
             click(f'..{os.sep}img{os.sep}coin.bmp', tap_count)
             break
 
         print("Ожидание пополнения энергии")
-        time.sleep(1500) # 25min
+        time_sleep = 2100 # 35min
+        for sec in range(0, time_sleep):
+            print(f"Осталось {(time_sleep - sec) // 60} минут, {(time_sleep - sec) % 60} сек", end="\r")
+            time.sleep(1)
         print("Пополнение энергии завершено")
